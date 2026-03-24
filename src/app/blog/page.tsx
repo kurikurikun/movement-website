@@ -23,43 +23,74 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative h-[40vh] flex items-center justify-center">
+      <section className="relative h-[50vh] flex items-end pb-16">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://picsum.photos/seed/blog-hero/1920/800"
+          src="/images/hero1.jpg"
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/70" />
-        <div className="relative text-center px-4">
-          <h1 className="text-4xl sm:text-5xl font-light mb-4">Blog</h1>
-          <p className="text-white/60 text-xl font-jp">ブログ</p>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/50 to-white/90" />
+        <div className="relative px-8 lg:px-20 max-w-7xl mx-auto w-full">
+          <span className="font-mono text-xs tracking-[0.3em] text-accent-warm uppercase">Latest Stories</span>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black mt-3 text-neutral-900 leading-none">
+            Blog<span className="text-accent-warm">.</span>
+          </h1>
+          <p className="text-neutral-500 text-lg font-jp mt-3">ブログ</p>
         </div>
       </section>
 
       {/* Blog Grid */}
-      <section className="py-24 px-4">
-        <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, i) => (
-            <FadeInSection key={i}>
-              <article className="bg-dark-800 rounded-lg overflow-hidden hover:bg-dark-700 transition-colors group">
+      <section className="py-28 px-4">
+        <div className="max-w-7xl mx-auto">
+          {/* Featured post — first one large */}
+          <FadeInSection className="mb-16">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div className="relative group overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`https://picsum.photos/seed/blogpage${i + 1}/600/300`}
+                  src="/images/yamagata2.jpeg"
                   alt=""
-                  className="w-full h-48 object-cover group-hover:opacity-80 transition-opacity"
+                  className="w-full aspect-[4/3] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
-                <div className="p-6">
-                  <time className="text-xs text-white/30">{post.date}</time>
-                  <h2 className="text-lg font-semibold mt-2 mb-1">{post.title}</h2>
-                  <p className="text-white/40 text-sm font-jp mb-4">{post.titleJp}</p>
-                  <Link href="/blog" className="text-accent-warm text-sm font-medium hover:underline">
-                    Read More →
-                  </Link>
+                <div className="absolute top-4 left-4 font-mono text-xs tracking-[0.3em] text-white/80">
+                  FEATURED
                 </div>
-              </article>
-            </FadeInSection>
-          ))}
+              </div>
+              <div>
+                <time className="font-mono text-xs tracking-[0.2em] text-neutral-400">{blogPosts[0].date}</time>
+                <h2 className="text-3xl font-black mt-3 mb-2 text-neutral-900">{blogPosts[0].title}</h2>
+                <p className="text-accent-warm text-sm font-jp mb-4">{blogPosts[0].titleJp}</p>
+                <Link href="/blog" className="text-accent-warm text-sm font-mono tracking-wider hover:text-accent-warm-dark transition-colors">
+                  READ →
+                </Link>
+              </div>
+            </div>
+          </FadeInSection>
+
+          {/* Rest of posts */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-l border-neutral-200">
+            {blogPosts.slice(1).map((post, i) => (
+              <FadeInSection key={i}>
+                <article className="border-b border-r border-neutral-200 group hover:bg-neutral-50 transition-colors">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`/images/kochi3.png`}
+                    alt=""
+                    className="w-full h-40 object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                  <div className="p-5">
+                    <time className="font-mono text-[10px] tracking-[0.3em] text-neutral-300">{post.date}</time>
+                    <h3 className="font-bold text-neutral-900 mt-2 mb-1 text-sm group-hover:text-accent-warm transition-colors">{post.title}</h3>
+                    <p className="text-neutral-400 text-xs font-jp mb-3">{post.titleJp}</p>
+                    <Link href="/blog" className="text-accent-warm text-xs font-mono tracking-wider hover:text-accent-warm-dark transition-colors">
+                      READ →
+                    </Link>
+                  </div>
+                </article>
+              </FadeInSection>
+            ))}
+          </div>
         </div>
       </section>
     </div>

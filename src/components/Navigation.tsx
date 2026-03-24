@@ -17,30 +17,30 @@ const navMenus: NavMenu[] = [
   {
     label: "実績",
     items: [
-      { label: "移住", href: "/programme-content" },
-      { label: "大学", href: "/programme-content" },
-      { label: "インバウンド", href: "/programme-content" },
-      { label: "企業向け映像", href: "/programme-content" },
+      { label: "移住促進", href: "/regional-migration" },
+      { label: "大学プロモーション", href: "/university-promo" },
+      { label: "インバウンド観光", href: "/inbound-tourism" },
+      { label: "企業向け映像", href: "https://www.filminginjapan.com/" },
     ],
   },
   {
     label: "Our Work",
     items: [
       { label: "Programme Content", href: "/programme-content" },
-      { label: "Corporate Video", href: "/programme-content" },
-      { label: "Drone", href: "/japan-drone-video-photo" },
-      { label: "VR", href: "/vr-360-tours-japan" },
+      { label: "Corporate Video", href: "https://www.filminginjapan.com/" },
+      { label: "Drone Video & Photo", href: "/japan-drone-video-photo" },
+      { label: "VR / 360° Tours", href: "/vr-360-tours-japan" },
       { label: "Blog", href: "/blog" },
     ],
   },
   {
     label: "About Us",
     items: [
-      { label: "Our Company", href: "/about" },
-      { label: "About Us", href: "/about" },
-      { label: "Our Gear", href: "/about" },
-      { label: "Privacy Policy", href: "/about" },
+      { label: "About move-ment", href: "/about" },
+      { label: "Equipment / 機材", href: "/about" },
       { label: "Contact", href: "/contact" },
+      { label: "filminginjapan.com", href: "https://www.filminginjapan.com/" },
+      { label: "Instagram", href: "https://www.instagram.com/move_ment.co.ltd/" },
     ],
   },
 ];
@@ -70,7 +70,7 @@ function DropdownMenu({
     <div ref={ref} className="relative">
       <button
         onClick={onToggle}
-        className="text-white/80 hover:text-white transition-colors text-sm font-medium tracking-wide flex items-center gap-1"
+        className="text-neutral-500 hover:text-neutral-900 transition-colors text-sm font-medium tracking-[0.15em] uppercase flex items-center gap-1 group"
       >
         {menu.label}
         <svg
@@ -81,14 +81,15 @@ function DropdownMenu({
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
+        <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent-warm group-hover:w-full transition-all duration-300" />
       </button>
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 min-w-[200px] bg-dark-800 border border-white/10 rounded-lg shadow-xl py-2 z-50">
+        <div className="absolute top-full left-0 mt-3 min-w-[220px] bg-white border border-neutral-200 rounded-none shadow-2xl py-2 z-50">
           {menu.items.map((item, i) => (
             <Link
               key={i}
               href={item.href}
-              className="block px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+              className="block px-5 py-2.5 text-sm text-neutral-500 hover:text-neutral-900 hover:bg-neutral-50 hover:pl-7 transition-all duration-200"
               onClick={onToggle}
             >
               {item.label}
@@ -103,20 +104,32 @@ function DropdownMenu({
 export default function Navigation() {
   const [openMenu, setOpenMenu] = useState<number | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-900/90 backdrop-blur-md border-b border-white/5">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+    }`}>
+      {/* Top accent line */}
+      <div className="h-[2px] bg-gradient-to-r from-accent-warm via-accent-warm-light to-accent-warm" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <span className="text-xl font-bold tracking-tight">
+          <Link href="/" className="flex-shrink-0 glitch-hover">
+            <span className="text-2xl font-black tracking-tight text-neutral-900">
               move<span className="text-accent-warm">-</span>ment
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {navMenus.map((menu, i) => (
               <DropdownMenu
                 key={i}
@@ -129,7 +142,7 @@ export default function Navigation() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-neutral-900 p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -148,17 +161,17 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-dark-800 border-t border-white/5 max-h-[80vh] overflow-y-auto">
+        <div className="md:hidden bg-white border-t border-neutral-200 max-h-[80vh] overflow-y-auto">
           {navMenus.map((menu, i) => (
-            <div key={i} className="border-b border-white/5">
-              <div className="px-4 py-3 text-sm font-semibold text-accent-warm">
+            <div key={i} className="border-b border-neutral-200">
+              <div className="px-4 py-3 text-xs font-mono font-semibold text-accent-warm tracking-[0.2em] uppercase">
                 {menu.label}
               </div>
               {menu.items.map((item, j) => (
                 <Link
                   key={j}
                   href={item.href}
-                  className="block px-6 py-2 text-sm text-white/70 hover:text-white"
+                  className="block px-6 py-2.5 text-sm text-neutral-500 hover:text-neutral-900 hover:bg-neutral-50 transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label}

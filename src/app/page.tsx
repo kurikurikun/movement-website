@@ -2,83 +2,62 @@ import HeroSlideshow from "@/components/HeroSlideshow";
 import FadeInSection from "@/components/FadeInSection";
 import Link from "next/link";
 
-const portfolioItems = [
+const videoPortfolio = [
   {
-    title: "Shibuya + Yummy",
+    title: "Shibuya + Yummy | \"This sushi is Shibuyummy!\"",
     titleJp: "渋谷 + ヤミー",
-    description: "NHK series exploring Tokyo's vibrant Shibuya district through food and culture.",
-    descriptionJp: "NHKシリーズ：渋谷の食と文化を探る。",
-    images: [
-      "https://picsum.photos/seed/shibuya1/600/400",
-      "https://picsum.photos/seed/shibuya2/600/400",
-      "https://picsum.photos/seed/shibuya3/600/400",
-    ],
+    description: "Part 1 of a 6 episode series, Shibuyummmy, on the food and culture of Shibuya, Tokyo, which we developed for JIB, part of the national broadcaster NHK. We designed the Shibuyummy branding, making the graphics, t-shirt and nfc chip link to bring the branding into the real world.",
+    embedUrl: "https://www.youtube.com/embed/T-zLkZJK1dw",
+    screengrabs: ["/images/hero2.jpeg", "/images/hero3.jpeg", "/images/hero4.jpeg"],
+    tag: "Lifestyle Documentary",
   },
   {
-    title: "Kochi / Ashizuri",
+    title: "Kochi | \"This is a very difficult place to get to. But..\"",
     titleJp: "高知 / 足摺",
-    description: "Cinematic journey through the untouched landscapes of Kochi Prefecture and Cape Ashizuri.",
-    descriptionJp: "高知県と足摺岬の手つかずの風景を巡る映像の旅。",
-    images: [
-      "https://picsum.photos/seed/kochi1/600/400",
-      "https://picsum.photos/seed/kochi2/600/400",
-      "https://picsum.photos/seed/kochi3/600/400",
-    ],
+    description: "Place is not just place. Place is the people so when we were asked to introduce the place of Ashizuri in Kochi Prefecture we knew we needed to hear from the people there, the locals, about the place. Why should you visit? Listen to what the locals have to say.",
+    embedUrl: "https://player.vimeo.com/video/749777428?h=99630702df",
+    screengrabs: ["/images/kochi1.png", "/images/kochi2.png", "/images/kochi3.png"],
+    tag: "Regional Promo",
   },
   {
-    title: "3.11 Tsunami / Tohoku",
+    title: "Channel Oishii | Channelling Japanese taste and tasty Japanese food",
+    titleJp: "チャネルおいしい",
+    description: "Japanese food is more than flavor — it's stories waiting to be shared. Channel Oishii serves those stories to the world. One of a series of promotion videos we made for the new FAST Channel, Channel Oishii, launched by JIB TV to distribute original and existing Japanese food culture programmes to the world.",
+    embedUrl: "https://www.youtube.com/embed/Ku08sQGhcdc",
+    screengrabs: ["/images/oishii1.jpg", "/images/oishii2.jpg", "/images/oishii3.jpg"],
+    tag: "NHK",
+  },
+  {
+    title: "3.11 Tsunami | 「世界の皆さん、この風景見えていますか？」",
     titleJp: "3.11 津波 / 東北",
-    description: "Documentary capturing the resilience and recovery of Tohoku after the devastating 2011 tsunami.",
-    descriptionJp: "2011年の津波後、東北の復興と再生を捉えたドキュメンタリー。",
-    images: [
-      "https://picsum.photos/seed/tohoku1/600/400",
-      "https://picsum.photos/seed/tohoku2/600/400",
-      "https://picsum.photos/seed/tohoku3/600/400",
-    ],
+    description: "How have the survivors of the 2011 Tohoku earthquake tsunami dealt with the physical and emotional destruction? What can we learn from them about resilience and rebuilding lives and communities? We travelled around the region for the Recovery Agency to listen and find out.",
+    embedUrl: "https://player.vimeo.com/video/476199958",
+    screengrabs: ["/images/tsunami1.png", "/images/tsunami2.png", "/images/tsunami3.png"],
+    tag: "Documentary",
   },
   {
-    title: "Yamagata Local Food",
-    titleJp: "山形のローカルフード",
-    description: "Cool Japan / CNNJ feature on Yamagata's rich local food traditions and artisan producers.",
-    descriptionJp: "Cool Japan / CNNJ：山形の豊かな食文化と職人を特集。",
-    images: [
-      "https://picsum.photos/seed/yamagata1/600/400",
-      "https://picsum.photos/seed/yamagata2/600/400",
-      "https://picsum.photos/seed/yamagata3/600/400",
-    ],
-  },
-  {
-    title: "Kyoto Drone Shots",
+    title: "Kyoto | from above",
     titleJp: "京都ドローン撮影",
-    description: "Breathtaking aerial footage of Kyoto's temples, gardens, and cityscapes from above.",
-    descriptionJp: "京都の寺院、庭園、街並みを上空から捉えた圧巻の映像。",
-    images: [
-      "https://picsum.photos/seed/kyoto1/600/400",
-      "https://picsum.photos/seed/kyoto2/600/400",
-      "https://picsum.photos/seed/kyoto3/600/400",
-    ],
+    description: "Drone shots of Yasaka Pagoda, the bamboo forest in Arashiyama and other places in Kyoto. Filmed on the Inspire 2 drone with permission.",
+    embedUrl: "https://player.vimeo.com/video/891368020",
+    screengrabs: ["/images/kyoto1.jpeg", "/images/kyoto2.jpeg", "/images/kyoto3.jpeg"],
+    tag: "Drone",
   },
   {
-    title: "Can't Stop Won't Stop",
-    titleJp: "キャント・ストップ・ウォント・ストップ",
-    description: "A short film about perseverance, creativity, and the unstoppable human spirit.",
-    descriptionJp: "忍耐、創造性、そして止められない人間の精神を描いた短編映画。",
-    images: [
-      "https://picsum.photos/seed/cantstop1/600/400",
-      "https://picsum.photos/seed/cantstop2/600/400",
-      "https://picsum.photos/seed/cantstop3/600/400",
-    ],
+    title: "Can't stop, won't stop | \"I should have stopped.\"",
+    titleJp: "キャント・ストップ",
+    description: "The crew is pumped up for athletic life style fashion shoot but the set is just not dark and moody enough for the director so when he yells \"lights down\" things come crashing down in this dark comedy short.",
+    embedUrl: "https://player.vimeo.com/video/532064736",
+    screengrabs: ["/images/boxer1.png", "/images/boxer2.png", "/images/boxer3.png"],
+    tag: "Short Film",
   },
   {
-    title: "Japan's Best Kept Secret",
+    title: "Japan's best kept secret | \"Here, take this life jacket.\"",
     titleJp: "日本の秘境",
-    description: "A travel film uncovering the hidden gems of the Kansai region beyond the usual tourist spots.",
-    descriptionJp: "関西地方の隠れた名所を巡るトラベルフィルム。",
-    images: [
-      "https://picsum.photos/seed/kansai1/600/400",
-      "https://picsum.photos/seed/kansai2/600/400",
-      "https://picsum.photos/seed/kansai3/600/400",
-    ],
+    description: "\"Arrived in Osaka, Japan and I was about to tuck into the local food, takoyaki, when I came across this weird message. I set off to find what it all meant and fate seemed to throw me an odd collection of items on the way. I mean, a life jacket from a train conductor, really?!\"",
+    embedUrl: "https://player.vimeo.com/video/774923949",
+    screengrabs: ["/images/secret1.jpeg", "/images/secret2.jpeg", "/images/secret3.jpeg"],
+    tag: "Regional Promo",
   },
 ];
 
@@ -86,86 +65,121 @@ const blogPosts = [
   { title: "Behind the Lens: Filming in Rural Japan", titleJp: "レンズの向こう側：日本の地方での撮影", slug: "filming-rural-japan" },
   { title: "The Art of Drone Cinematography", titleJp: "ドローン映像撮影の芸術", slug: "drone-cinematography" },
   { title: "Why Bilingual Video Matters", titleJp: "なぜバイリンガル映像が重要なのか", slug: "bilingual-video" },
-  { title: "VR Tours: The Future of Travel Content", titleJp: "VRツアー：旅行コンテンツの未来", slug: "vr-tours-future" },
-  { title: "Documenting Japan's Recovery: 10 Years On", titleJp: "日本の復興を記録する：10年後", slug: "japan-recovery" },
-  { title: "From Script to Screen: Our Process", titleJp: "脚本から画面へ：私たちのプロセス", slug: "our-process" },
 ];
 
 export default function Home() {
   return (
-    <>
+    <div className="noise-bg">
       {/* Hero Slideshow */}
       <HeroSlideshow />
 
-      {/* Bilingual Intro */}
-      <section className="py-24 px-4">
-        <FadeInSection className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-light mb-8">
-            About <span className="font-semibold">move<span className="text-accent-warm">-</span>ment</span>
-          </h2>
-          <p className="text-white/70 text-lg leading-relaxed mb-6">
-            We are a bilingual video production company based in Japan. We create cinematic content
-            that bridges cultures, tells authentic stories, and moves people to action. From documentary
-            filmmaking to corporate video, drone cinematography to VR experiences — we bring visions to life.
-          </p>
-          <p className="text-white/50 text-lg leading-relaxed font-jp">
-            私たちは日本を拠点とするバイリンガル映像制作会社です。文化の架け橋となり、
-            本物のストーリーを伝え、人々を動かすシネマティックなコンテンツを制作しています。
-            ドキュメンタリー映画制作から企業向け映像、ドローン撮影からVR体験まで、
-            ビジョンを映像に変えます。
-          </p>
-        </FadeInSection>
+      {/* About Section — asymmetric layout */}
+      <section className="py-32 px-4 relative">
+        {/* Large background text */}
+        <div className="absolute top-16 left-0 text-[12vw] font-black text-neutral-100 leading-none select-none pointer-events-none whitespace-nowrap overflow-hidden w-full">
+          ABOUT
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <FadeInSection>
+            <div className="grid lg:grid-cols-[1fr,2px,1fr] gap-12 items-start">
+              {/* Japanese */}
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-black mb-8 text-neutral-900 leading-tight font-jp">
+                  世界へ届ける日本のストーリー、心を動かす<br />
+                  + <span className="text-accent-warm">move</span>-ment
+                </h2>
+                <p className="text-neutral-500 text-lg leading-relaxed font-jp mb-6">
+                  日本の人々や場所には語るべき物語があります。私たちはそれに耳を傾けています。空から地上まで、日本各地で日英バイリンガルのチームがドキュメンタリーや放送用のシリーズ映像を制作。
+                </p>
+                <p className="text-neutral-500 text-lg leading-relaxed font-jp">
+                  地域や大自然から渋谷の裏路地まで、大小さまざまな物語を求めて日本を探検。国内外の放送局、国や自治体、大学やNPOのために、映像という形で届けています。
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="hidden lg:block w-[2px] h-full bg-gradient-to-b from-transparent via-accent-warm/30 to-transparent" />
+
+              {/* English */}
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-black mb-8 text-neutral-900 leading-tight">
+                  Stories of Japan to the world, made to move<br />
+                  + <span className="text-accent-warm">move</span>-ment
+                </h2>
+                <p className="text-neutral-500 text-lg leading-relaxed mb-6">
+                  The people and places of Japan have something to say – we are listening. Documentary and episodic scripted and unscripted series video production in the air and on the ground throughout Japan by our Japanese/English bilingual team.
+                </p>
+                <p className="text-neutral-500 text-lg leading-relaxed">
+                  We specialize in exploring Japan, from the regions and great outdoors to the back streets of Shibuya, for national and international broadcasters, national and local authorities, universities and non-profits in search of stories big and small.
+                </p>
+              </div>
+            </div>
+          </FadeInSection>
+        </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section className="py-24 px-4 bg-dark-800">
+      {/* Video Portfolio Section */}
+      <section className="py-32 px-4 relative">
         <div className="max-w-7xl mx-auto">
-          <FadeInSection className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-light mb-4">
-              Our Work / <span className="font-jp">実績</span>
-            </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
-              Selected projects from our portfolio of documentary, corporate, and creative video work across Japan.
-            </p>
+          <FadeInSection className="mb-20">
+            <div className="flex items-end justify-between">
+              <div>
+                <span className="font-mono text-xs tracking-[0.3em] text-accent-warm uppercase">Selected Projects</span>
+                <h2 className="text-4xl sm:text-6xl font-black mt-4 text-neutral-900 leading-none">
+                  Our Work<span className="text-accent-warm">.</span>
+                </h2>
+                <p className="text-neutral-400 font-jp mt-3">実績</p>
+              </div>
+              <div className="hidden sm:block">
+                <div className="accent-line w-32" />
+              </div>
+            </div>
           </FadeInSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioItems.map((item, i) => (
+          <div className="space-y-32">
+            {videoPortfolio.map((item, i) => (
               <FadeInSection key={i}>
-                <div className="group bg-dark-700 rounded-lg overflow-hidden hover:ring-1 hover:ring-accent-warm/30 transition-all duration-300">
-                  {/* Image grid: 1 large + 2 small */}
-                  <div className="grid grid-cols-2 gap-0.5">
-                    <div className="col-span-2">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={item.images[0]}
-                        alt={item.title}
-                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={item.images[1]}
-                        alt=""
-                        className="w-full h-24 object-cover"
-                      />
-                    </div>
-                    <div>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={item.images[2]}
-                        alt=""
-                        className="w-full h-24 object-cover"
-                      />
-                    </div>
+                <div className="mb-6 flex items-baseline gap-4">
+                  <span className="font-mono text-xs tracking-[0.3em] text-neutral-300">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight inline">
+                      {item.title}
+                    </h3>
+                    <span className="text-accent-warm text-sm font-jp ml-3">{item.titleJp}</span>
+                    <span className="font-mono text-[10px] tracking-[0.2em] bg-accent-warm text-white px-3 py-1 uppercase ml-3 inline-block">
+                      {item.tag}
+                    </span>
                   </div>
-                  <div className="p-5">
-                    <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-                    <p className="text-accent-warm/70 text-sm font-jp mb-3">{item.titleJp}</p>
-                    <p className="text-white/60 text-sm leading-relaxed mb-2">{item.description}</p>
-                    <p className="text-white/40 text-xs font-jp leading-relaxed">{item.descriptionJp}</p>
-                  </div>
+                </div>
+
+                <p className="text-neutral-500 leading-relaxed mb-6 max-w-3xl">
+                  {item.description}
+                </p>
+
+                {/* Video embed */}
+                <div className="aspect-video bg-neutral-900">
+                  <iframe
+                    src={item.embedUrl}
+                    className="w-full h-full"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title={item.title}
+                  />
+                </div>
+
+                {/* Screengrabs underneath */}
+                <div className="grid grid-cols-3 gap-2 mt-4">
+                  {item.screengrabs.map((img, j) => (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img
+                      key={j}
+                      src={img}
+                      alt={`${item.title} screenshot ${j + 1}`}
+                      className="w-full aspect-video object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    />
+                  ))}
                 </div>
               </FadeInSection>
             ))}
@@ -174,33 +188,41 @@ export default function Home() {
       </section>
 
       {/* Blog Preview Section */}
-      <section className="py-24 px-4">
-        <div className="max-w-7xl mx-auto">
-          <FadeInSection className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-light mb-4">
-              Blog / <span className="font-jp">ブログ</span>
+      <section className="py-32 px-4 relative">
+        <div className="absolute bottom-0 left-0 text-[12vw] font-black text-neutral-100 leading-none select-none pointer-events-none">
+          BLOG
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <FadeInSection className="mb-16">
+            <span className="font-mono text-xs tracking-[0.3em] text-accent-warm uppercase">Latest Stories</span>
+            <h2 className="text-4xl sm:text-5xl font-black mt-4 text-neutral-900 leading-none">
+              Blog<span className="text-accent-warm">.</span>
             </h2>
-            <p className="text-white/50">Latest stories and insights from our team.</p>
+            <p className="text-neutral-400 font-jp mt-2">ブログ</p>
           </FadeInSection>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-3 gap-0 border-t border-neutral-200">
             {blogPosts.map((post, i) => (
               <FadeInSection key={i}>
-                <div className="bg-dark-800 rounded-lg overflow-hidden hover:bg-dark-700 transition-colors group">
+                <div className="border-b sm:border-b-0 sm:border-r border-neutral-200 last:border-r-0 group">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={`https://picsum.photos/seed/blog${i + 1}/600/300`}
+                    src={["/images/kyoto2.jpeg", "/images/kochi2.png", "/images/drone1.jpg"][i]}
                     alt=""
-                    className="w-full h-40 object-cover group-hover:opacity-80 transition-opacity"
+                    className="w-full h-48 object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
-                  <div className="p-5">
-                    <h3 className="font-semibold mb-1">{post.title}</h3>
-                    <p className="text-white/40 text-sm font-jp mb-4">{post.titleJp}</p>
+                  <div className="p-6">
+                    <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-400">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <h3 className="font-bold text-neutral-900 mt-2 mb-1 group-hover:text-accent-warm transition-colors">{post.title}</h3>
+                    <p className="text-neutral-400 text-sm font-jp mb-4">{post.titleJp}</p>
                     <Link
                       href="/blog"
-                      className="text-accent-warm text-sm font-medium hover:underline"
+                      className="text-accent-warm text-sm font-mono tracking-wider hover:text-accent-warm-dark transition-colors"
                     >
-                      Read More →
+                      READ →
                     </Link>
                   </div>
                 </div>
@@ -209,6 +231,28 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </>
+
+      {/* CTA Section */}
+      <section className="py-32 px-4 bg-neutral-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-warm/5 to-transparent" />
+        <FadeInSection className="max-w-4xl mx-auto text-center relative z-10">
+          <span className="font-mono text-xs tracking-[0.3em] text-accent-warm uppercase">Get in touch</span>
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mt-6 mb-8 text-neutral-900 leading-none">
+            Let&apos;s create<br />
+            something that<br />
+            <span className="text-accent-warm">moves</span> people<span className="text-accent-warm">.</span>
+          </h2>
+          <p className="text-neutral-400 font-jp text-lg mb-10">
+            お問い合わせはこちらから。
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-10 py-4 bg-accent-warm text-white font-bold text-sm tracking-[0.15em] uppercase hover:bg-accent-warm-dark transition-colors glitch-hover"
+          >
+            Contact Us / お問い合わせ
+          </Link>
+        </FadeInSection>
+      </section>
+    </div>
   );
 }

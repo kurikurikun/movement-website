@@ -2,15 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #0a0a0a;
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+::selection {
+  background-color: #e95228;
   color: #ffffff;
+}
+
+/* Edgy scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #e95228;
+  border-radius: 0;
 }
 
 @layer utilities {
@@ -21,11 +38,74 @@ body {
 
 .fade-in-section {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in-section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Glitch hover effect */
+.glitch-hover:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+/* Accent line that grows on scroll */
+.accent-line {
+  height: 2px;
+  background: linear-gradient(90deg, #e95228, #ff6b35);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s ease-out;
+}
+
+.visible .accent-line {
+  transform: scaleX(1);
+}
+
+/* Number styling for portfolio */
+.portfolio-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: #e95228;
+}
+
+/* Infinite horizontal scroller */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.scroller-track {
+  animation: scroll-left 30s linear infinite;
+  width: max-content;
+}
+
+.scroller-track:hover {
+  animation-play-state: paused;
+}
+
+/* Noise texture overlay */
+.noise-bg::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
