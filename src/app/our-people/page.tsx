@@ -22,7 +22,7 @@ export default function OurPeoplePage() {
       <section className="relative h-[60vh] flex items-end pb-16">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/our-people-hero.jpg"
+          src="/images/about.jpg"
           alt=""
           className="absolute inset-0 w-full h-full object-cover grayscale"
         />
