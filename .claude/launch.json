@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "movement-dev",
+      "runtimeExecutable": "/Users/21_10_m_m/.local/node/bin/node",
+      "runtimeArgs": ["/Users/21_10_m_m/.local/node/bin/npm", "run", "dev"],
+      "port": 3000,
+      "autoPort": true,
+      "env": {
+        "PATH": "/Users/21_10_m_m/.local/node/bin:/usr/bin:/bin"
+      }
+    }
+  ]
+}
