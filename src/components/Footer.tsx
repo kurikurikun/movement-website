@@ -38,7 +38,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               {[
-                { label: "Programme Content", href: "/programme-content" },
+                { label: "Programme Content", href: "/video-programme-content-japan" },
                 { label: "Drone Video & Photo", href: "/japan-drone-video-photo" },
                 { label: "VR / 360° Tours", href: "/vr-360-tours-japan" },
                 { label: "Blog", href: "/blog" },

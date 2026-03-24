@@ -3,8 +3,16 @@ import FadeInSection from "@/components/FadeInSection";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "VR & 360° Tours Japan | move-ment",
-  description: "Immersive VR and 360° virtual tour production across Japan. VR・360°バーチャルツアー制作。",
+  title: "VR & 360° Virtual Tours Japan",
+  description:
+    "Immersive VR and 360° virtual tour production across Japan — facilities, heritage sites, educational tours and more. UNITAR Hiroshima Peace Park. VR・360°バーチャルツアー制作。",
+  alternates: { canonical: "https://www.move-ment.co/vr-360-tours-japan" },
+  openGraph: {
+    title: "VR & 360° Virtual Tours Japan | move-ment",
+    description: "Professional 360° virtual tour and VR production across Japan. Educational, heritage, facility and tourism tours.",
+    url: "https://www.move-ment.co/vr-360-tours-japan",
+    images: [{ url: "/images/360_virtual_tour_japan.jpg", width: 1200, height: 630, alt: "360 VR virtual tour Japan" }],
+  },
 };
 
 export default function VRPage() {
@@ -232,14 +240,14 @@ export default function VRPage() {
             </p>
             <div className="space-y-6 mb-8">
               <p className="text-neutral-600 leading-relaxed">
-                We designed and produced an educational interactive tour of the Hiroshima Peace Park, including a <a href="https://cphotographic.com/unitar_pp/" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent-warm transition-colors">360 tour of the normally off-limits interior of the A-bomb dome written up on the blog here</a>, for the United Nations training entity, UNITAR.
+                We designed and produced an educational interactive tour of the Hiroshima Peace Park, including a <a href="http://cphotographic.com/unitar_pp/" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent-warm transition-colors">360 tour of the normally off-limits interior of the A-bomb dome written up on the blog here</a>, for the United Nations training entity, UNITAR.
               </p>
               <p className="text-neutral-500 font-jp leading-relaxed">
                 普段立ち入り禁止の原爆ドーム敷地内も含めた広島平和記念公園全体を体験できる360ツアーを設計し、制作しました。広島平和記念公園のバーチャルツアー撮影現場が<a href="/images/22_1_18_NHK_dome_360_filming.pdf" target="_blank" rel="noopener noreferrer" className="text-accent-warm font-bold underline hover:text-accent-warm-dark transition-colors">NHK広島</a>と<a href="/images/RCC_TV_Hiroshima_A-bomb-dome-inside-virtual-tour.pdf" target="_blank" rel="noopener noreferrer" className="text-accent-warm font-bold underline hover:text-accent-warm-dark transition-colors">RCC広島放送</a>で取り上げられた。
               </p>
             </div>
 
-            <a href="https://cphotographic.com/unitar_pp/" target="_blank" rel="noopener noreferrer" className="block mb-4 group">
+            <a href="http://cphotographic.com/unitar_pp/" target="_blank" rel="noopener noreferrer" className="block mb-4 group">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/360_virtual_tour_japan.jpg"
@@ -250,7 +258,7 @@ export default function VRPage() {
             <p className="text-sm text-neutral-500 mb-8">Click through for a 360 virtual tour of the Hiroshima Peace Park</p>
 
             {/* Hiroshima photos */}
-            <a href="https://cphotographic.com/unitar_pp/" target="_blank" rel="noopener noreferrer" className="grid grid-cols-4 gap-4 mb-16 group">
+            <a href="http://cphotographic.com/unitar_pp/" target="_blank" rel="noopener noreferrer" className="grid grid-cols-4 gap-4 mb-16 group">
               {["/images/peace-park-dome-360-tour1.jpg", "/images/peace-park-dome-360-tour2.jpg", "/images/peace-park-dome-360-tour3.jpeg", "/images/peace-park-dome-360-tour4.jpg"].map((img, i) => (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img

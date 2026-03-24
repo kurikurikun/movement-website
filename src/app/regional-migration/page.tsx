@@ -3,8 +3,15 @@ import FadeInSection from "@/components/FadeInSection";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "地方プロモーション映像制作 | move-ment",
-  description: "移住・観光・地域ブランド発信動画制作。Regional promotion video production in Japan.",
+  title: "地方プロモーション映像制作",
+  description:
+    "地方移住促進・観光・地域ブランド発信のための動画制作。Regional migration promotion and tourism video production in Japan. Testimonial video services for local governments.",
+  alternates: { canonical: "https://www.move-ment.co/regional-migration" },
+  openGraph: {
+    title: "Regional Promotion Video Production Japan | move-ment",
+    description: "Video production for regional migration promotion, local tourism and community branding across Japan.",
+    url: "https://www.move-ment.co/regional-migration",
+  },
 };
 
 const strengths = [

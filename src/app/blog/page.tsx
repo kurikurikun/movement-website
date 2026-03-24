@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeInSection from "@/components/FadeInSection";
+import { getPublishedPosts } from "@/lib/notion";
 
 export const metadata: Metadata = {
-  title: "Blog | move-ment",
-  description: "Stories, insights, and behind-the-scenes from move-ment's video production work in Japan.",
+  title: "Blog",
+  description:
+    "Stories, insights and behind-the-scenes from move-ment's video production work across Japan. Drone, VR, documentary and corporate filmmaking.",
+  alternates: { canonical: "https://www.move-ment.co/blog" },
+  openGraph: {
+    title: "Blog | move-ment — Video Production Japan",
+    description: "Stories and insights from bilingual video production across Japan.",
+    url: "https://www.move-ment.co/blog",
+  },
 };
 
-const blogPosts = [
-  { title: "Behind the Lens: Filming in Rural Japan", titleJp: "レンズの向こう側：日本の地方での撮影", date: "2024-12-15" },
-  { title: "The Art of Drone Cinematography", titleJp: "ドローン映像撮影の芸術", date: "2024-11-28" },
-  { title: "Why Bilingual Video Matters", titleJp: "なぜバイリンガル映像が重要なのか", date: "2024-11-10" },
-  { title: "VR Tours: The Future of Travel Content", titleJp: "VRツアー：旅行コンテンツの未来", date: "2024-10-22" },
-  { title: "Documenting Japan's Recovery: 10 Years On", titleJp: "日本の復興を記録する：10年後", date: "2024-10-05" },
-  { title: "From Script to Screen: Our Process", titleJp: "脚本から画面へ：私たちのプロセス", date: "2024-09-18" },
-  { title: "Cool Japan: Food Culture on Camera", titleJp: "クールジャパン：カメラの前の食文化", date: "2024-09-01" },
-  { title: "Shooting in All Seasons: A Year in Japan", titleJp: "四季折々の撮影：日本の一年", date: "2024-08-15" },
-  { title: "The Power of Storytelling in Corporate Video", titleJp: "企業映像におけるストーリーテリングの力", date: "2024-07-28" },
-];
+export const revalidate = 60; // ISR — revalidate every 60 seconds
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await getPublishedPosts();
+
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -43,54 +43,107 @@ export default function BlogPage() {
       {/* Blog Grid */}
       <section className="py-28 px-4">
         <div className="max-w-7xl mx-auto">
-          {/* Featured post — first one large */}
-          <FadeInSection className="mb-16">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className="relative group overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/yamagata2.jpeg"
-                  alt=""
-                  className="w-full aspect-[4/3] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                />
-                <div className="absolute top-4 left-4 font-mono text-xs tracking-[0.3em] text-white/80">
-                  FEATURED
-                </div>
-              </div>
-              <div>
-                <time className="font-mono text-xs tracking-[0.2em] text-neutral-400">{blogPosts[0].date}</time>
-                <h2 className="text-3xl font-black mt-3 mb-2 text-neutral-900">{blogPosts[0].title}</h2>
-                <p className="text-accent-warm text-sm font-jp mb-4">{blogPosts[0].titleJp}</p>
-                <Link href="/blog" className="text-accent-warm text-sm font-mono tracking-wider hover:text-accent-warm-dark transition-colors">
-                  READ →
-                </Link>
-              </div>
+          {posts.length === 0 ? (
+            <div className="text-center py-20">
+              <p className="font-mono text-xs tracking-[0.3em] text-neutral-300 uppercase mb-4">Coming Soon</p>
+              <p className="text-neutral-500">No posts published yet. Check back soon.</p>
             </div>
-          </FadeInSection>
-
-          {/* Rest of posts */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-l border-neutral-200">
-            {blogPosts.slice(1).map((post, i) => (
-              <FadeInSection key={i}>
-                <article className="border-b border-r border-neutral-200 group hover:bg-neutral-50 transition-colors">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={`/images/kochi3.png`}
-                    alt=""
-                    className="w-full h-40 object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
-                  <div className="p-5">
-                    <time className="font-mono text-[10px] tracking-[0.3em] text-neutral-300">{post.date}</time>
-                    <h3 className="font-bold text-neutral-900 mt-2 mb-1 text-sm group-hover:text-accent-warm transition-colors">{post.title}</h3>
-                    <p className="text-neutral-400 text-xs font-jp mb-3">{post.titleJp}</p>
-                    <Link href="/blog" className="text-accent-warm text-xs font-mono tracking-wider hover:text-accent-warm-dark transition-colors">
-                      READ →
-                    </Link>
+          ) : (
+            <>
+              {/* Featured post — first one large */}
+              <FadeInSection className="mb-16">
+                <Link href={`/blog/${posts[0].slug}`} className="block group">
+                  <div className="grid lg:grid-cols-2 gap-8 items-center">
+                    <div className="relative overflow-hidden">
+                      {posts[0].coverUrl ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={posts[0].coverUrl}
+                          alt={posts[0].title}
+                          className="w-full aspect-[4/3] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                        />
+                      ) : (
+                        <div className="w-full aspect-[4/3] bg-neutral-100 flex items-center justify-center">
+                          <span className="font-mono text-xs tracking-[0.3em] text-neutral-300">NO IMAGE</span>
+                        </div>
+                      )}
+                      <div className="absolute top-4 left-4 font-mono text-xs tracking-[0.3em] text-white/80">
+                        FEATURED
+                      </div>
+                    </div>
+                    <div>
+                      {posts[0].category && (
+                        <span className="font-mono text-xs tracking-[0.3em] text-accent-warm uppercase">
+                          {posts[0].category}
+                        </span>
+                      )}
+                      <time className="block font-mono text-xs tracking-[0.2em] text-neutral-400 mt-2">
+                        {posts[0].date}
+                      </time>
+                      <h2 className="text-3xl font-black mt-3 mb-3 text-neutral-900 group-hover:text-accent-warm transition-colors">
+                        {posts[0].title}
+                      </h2>
+                      {posts[0].excerpt && (
+                        <p className="text-neutral-500 leading-relaxed mb-4 text-sm">
+                          {posts[0].excerpt}
+                        </p>
+                      )}
+                      <span className="text-accent-warm text-sm font-mono tracking-wider group-hover:text-accent-warm-dark transition-colors">
+                        READ →
+                      </span>
+                    </div>
                   </div>
-                </article>
+                </Link>
               </FadeInSection>
-            ))}
-          </div>
+
+              {/* Rest of posts */}
+              {posts.length > 1 && (
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-l border-neutral-200">
+                  {posts.slice(1).map((post) => (
+                    <FadeInSection key={post.id}>
+                      <Link href={`/blog/${post.slug}`} className="block group">
+                        <article className="border-b border-r border-neutral-200 group-hover:bg-neutral-50 transition-colors">
+                          {post.coverUrl ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={post.coverUrl}
+                              alt={post.title}
+                              className="w-full h-40 object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                            />
+                          ) : (
+                            <div className="w-full h-40 bg-neutral-100 flex items-center justify-center">
+                              <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-300">NO IMAGE</span>
+                            </div>
+                          )}
+                          <div className="p-5">
+                            {post.category && (
+                              <span className="font-mono text-[10px] tracking-[0.3em] text-accent-warm uppercase">
+                                {post.category}
+                              </span>
+                            )}
+                            <time className="block font-mono text-[10px] tracking-[0.3em] text-neutral-300 mt-1">
+                              {post.date}
+                            </time>
+                            <h3 className="font-bold text-neutral-900 mt-2 mb-2 text-sm group-hover:text-accent-warm transition-colors">
+                              {post.title}
+                            </h3>
+                            {post.excerpt && (
+                              <p className="text-neutral-400 text-xs mb-3 line-clamp-2 leading-relaxed">
+                                {post.excerpt}
+                              </p>
+                            )}
+                            <span className="text-accent-warm text-xs font-mono tracking-wider group-hover:text-accent-warm-dark transition-colors">
+                              READ →
+                            </span>
+                          </div>
+                        </article>
+                      </Link>
+                    </FadeInSection>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
         </div>
       </section>
     </div>

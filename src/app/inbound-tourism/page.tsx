@@ -4,8 +4,15 @@ import PeopleScroller from "@/components/PeopleScroller";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "インバウンド観光映像制作 | move-ment",
-  description: "インバウンド観光・訪日プロモーション映像制作。Inbound tourism video production in Japan.",
+  title: "Inbound Tourism Video Japan",
+  description:
+    "Inbound tourism and Japan promotion video production for international audiences. Bilingual English/Japanese content to attract visitors to Japan. インバウンド観光・訪日プロモーション映像制作。",
+  alternates: { canonical: "https://www.move-ment.co/inbound-tourism" },
+  openGraph: {
+    title: "Inbound Tourism Video Production Japan | move-ment",
+    description: "Attract international visitors to Japan with bilingual promotional video content. move-ment — Tokyo-based bilingual video production.",
+    url: "https://www.move-ment.co/inbound-tourism",
+  },
 };
 
 const caseStudies = [

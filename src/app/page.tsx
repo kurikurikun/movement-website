@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import FadeInSection from "@/components/FadeInSection";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "move-ment | Bilingual Video Production Company Japan",
+  description:
+    "move-ment is a Tokyo-based bilingual (JP/EN) video production company. Corporate video, drone, VR/360 tours, documentary, inbound tourism and programme content across Japan. 日本を拠点とするバイリンガル映像制作会社。",
+  alternates: { canonical: "https://www.move-ment.co" },
+  openGraph: {
+    title: "move-ment | Bilingual Video Production Company Japan",
+    description:
+      "Tokyo-based bilingual video production. Corporate, drone, VR/360, documentary, inbound tourism. 映像制作会社。",
+    url: "https://www.move-ment.co",
+    images: [{ url: "/images/japan_drone_photos_dji_123.jpg", width: 1200, height: 630, alt: "move-ment — Bilingual Video Production Japan" }],
+  },
+};
 
 const videoPortfolio = [
   {

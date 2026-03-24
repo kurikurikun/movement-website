@@ -18,7 +18,7 @@ const navMenus: NavMenu[] = [
     label: "実績",
     items: [
       { label: "移住促進", href: "/regional-migration" },
-      { label: "大学プロモーション", href: "/university-promo" },
+      { label: "大学プロモーション", href: "/university-promotion-video-japan" },
       { label: "インバウンド観光", href: "/inbound-tourism" },
       { label: "企業向け映像", href: "https://www.filminginjapan.com/" },
     ],
@@ -26,7 +26,7 @@ const navMenus: NavMenu[] = [
   {
     label: "Our Work",
     items: [
-      { label: "Programme Content", href: "/programme-content" },
+      { label: "Programme Content", href: "/video-programme-content-japan" },
       { label: "Corporate Video", href: "https://www.filminginjapan.com/" },
       { label: "Drone Video & Photo", href: "/japan-drone-video-photo" },
       { label: "VR / 360° Tours", href: "/vr-360-tours-japan" },
@@ -36,11 +36,10 @@ const navMenus: NavMenu[] = [
   {
     label: "About Us",
     items: [
-      { label: "About move-ment", href: "/about" },
-      { label: "Equipment / 機材", href: "/about" },
-      { label: "Contact", href: "/contact" },
-      { label: "filminginjapan.com", href: "https://www.filminginjapan.com/" },
-      { label: "Instagram", href: "https://www.instagram.com/move_ment.co.ltd/" },
+      { label: "Our Company", href: "/about" },
+      { label: "Our People", href: "/our-people" },
+      { label: "Our Gear", href: "/kizai-equipment-video-japan" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
     ],
   },
 ];

@@ -25,8 +25,16 @@ const dronePhotos = [
 ];
 
 export const metadata: Metadata = {
-  title: "Drone Video & Photo Japan | move-ment",
-  description: "Professional drone cinematography and aerial photography across Japan. ドローン撮影サービス。",
+  title: "Japan Drone Video & Photo",
+  description:
+    "Professional drone video and aerial photography across Japan. DJI Mavic 3 Pro Cine, licensed with Japan-wide flight permit (無人航空機全国包括飛行許可). ドローン空撮映像・写真制作。",
+  alternates: { canonical: "https://www.move-ment.co/japan-drone-video-photo" },
+  openGraph: {
+    title: "Drone Video & Aerial Photography Japan | move-ment",
+    description: "Licensed drone video and aerial photo production across Japan. Cinematic 4K footage, nationwide flight permit, fully insured.",
+    url: "https://www.move-ment.co/japan-drone-video-photo",
+    images: [{ url: "/images/japan_drone_photos_dji_123.jpg", width: 1200, height: 630, alt: "Japan drone aerial video" }],
+  },
 };
 
 export default function DronePage() {
@@ -109,7 +117,7 @@ export default function DronePage() {
             </p>
 
             <div className="space-y-12 mb-8">
-              <div className="max-w-3xl mx-auto">
+              <div>
                 <p className="text-sm text-neutral-500 mb-3 font-medium">Tokyo and Japan drone reel</p>
                 <div className="aspect-video bg-neutral-900">
                   <iframe
@@ -121,7 +129,7 @@ export default function DronePage() {
                   />
                 </div>
               </div>
-              <div className="max-w-3xl mx-auto">
+              <div>
                 <p className="text-sm text-neutral-500 mb-3 font-medium">Yamagata Prefecture — terraced rice fields, Haguro Pagoda, Mt Gassan, Yamadera</p>
                 <div className="aspect-video bg-neutral-900">
                   <iframe
@@ -133,7 +141,7 @@ export default function DronePage() {
                   />
                 </div>
               </div>
-              <div className="max-w-3xl mx-auto">
+              <div>
                 <p className="text-sm text-neutral-500 mb-3 font-medium">Fujinomiya Route on Mt Fuji by drone</p>
                 <div className="aspect-video bg-neutral-900">
                   <iframe
