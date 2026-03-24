@@ -76,11 +76,6 @@ const videoPortfolio = [
   },
 ];
 
-const blogPosts = [
-  { title: "Behind the Lens: Filming in Rural Japan", titleJp: "レンズの向こう側：日本の地方での撮影", slug: "filming-rural-japan" },
-  { title: "The Art of Drone Cinematography", titleJp: "ドローン映像撮影の芸術", slug: "drone-cinematography" },
-  { title: "Why Bilingual Video Matters", titleJp: "なぜバイリンガル映像が重要なのか", slug: "bilingual-video" },
-];
 
 export default function Home() {
   return (
@@ -202,48 +197,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Blog Preview Section */}
+      {/* Blog CTA Section */}
       <section className="py-32 px-4 relative">
         <div className="absolute bottom-0 left-0 text-[12vw] font-black text-neutral-100 leading-none select-none pointer-events-none">
           BLOG
         </div>
-
         <div className="max-w-7xl mx-auto relative z-10">
-          <FadeInSection className="mb-16">
-            <span className="font-mono text-xs tracking-[0.3em] text-accent-warm uppercase">Latest Stories</span>
-            <h2 className="text-4xl sm:text-5xl font-black mt-4 text-neutral-900 leading-none">
-              Blog<span className="text-accent-warm">.</span>
-            </h2>
-            <p className="text-neutral-400 font-jp mt-2">ブログ</p>
+          <FadeInSection>
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-8">
+              <div>
+                <span className="font-mono text-xs tracking-[0.3em] text-accent-warm uppercase">Latest Stories</span>
+                <h2 className="text-4xl sm:text-5xl font-black mt-4 text-neutral-900 leading-none">
+                  Blog<span className="text-accent-warm">.</span>
+                </h2>
+                <p className="text-neutral-400 font-jp mt-2">ブログ</p>
+              </div>
+              <Link
+                href="/blog"
+                className="inline-block px-8 py-3 bg-accent-warm text-white font-bold text-sm tracking-widest uppercase hover:bg-accent-warm-dark transition-colors self-start sm:self-auto"
+              >
+                Read the Blog →
+              </Link>
+            </div>
           </FadeInSection>
-
-          <div className="grid sm:grid-cols-3 gap-0 border-t border-neutral-200">
-            {blogPosts.map((post, i) => (
-              <FadeInSection key={i}>
-                <div className="border-b sm:border-b-0 sm:border-r border-neutral-200 last:border-r-0 group">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={["/images/kyoto2.jpeg", "/images/kochi2.png", "/images/drone1.jpg"][i]}
-                    alt=""
-                    className="w-full h-48 object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
-                  <div className="p-6">
-                    <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-400">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <h3 className="font-bold text-neutral-900 mt-2 mb-1 group-hover:text-accent-warm transition-colors">{post.title}</h3>
-                    <p className="text-neutral-400 text-sm font-jp mb-4">{post.titleJp}</p>
-                    <Link
-                      href="/blog"
-                      className="text-accent-warm text-sm font-mono tracking-wider hover:text-accent-warm-dark transition-colors"
-                    >
-                      READ →
-                    </Link>
-                  </div>
-                </div>
-              </FadeInSection>
-            ))}
-          </div>
         </div>
       </section>
 
