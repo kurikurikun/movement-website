@@ -4,7 +4,7 @@ import Link from "next/link";
 import ElfsightInstagram from "@/components/ElfsightInstagram";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About move-ment | Bilingual Video Production Tokyo",
   description:
     "About Move-ment Company Ltd — a bilingual JP/EN video production company based in Tokyo, Japan, connecting Japan and the world through film. 私たちについて。",
   alternates: { canonical: "https://www.move-ment.co/about" },

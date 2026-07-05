@@ -4,9 +4,9 @@ import PeopleScroller from "@/components/PeopleScroller";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Inbound Tourism Video Japan",
+  title: "インバウンド・観光プロモーション映像制作｜move-ment",
   description:
-    "Inbound tourism and Japan promotion video production for international audiences. Bilingual English/Japanese content to attract visitors to Japan. インバウンド観光・訪日プロモーション映像制作。",
+    "訪日インバウンド観光・地域観光プロモーションのための映像制作。ローカルの声と現地ストーリーで、国内外に届く観光プロモーション動画を制作します。",
   alternates: { canonical: "https://www.move-ment.co/inbound-tourism" },
   openGraph: {
     title: "Inbound Tourism Video Production Japan | move-ment",
@@ -57,7 +57,7 @@ export default function InboundTourismPage() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative px-8 max-w-6xl mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight font-jp">
-            ローカルの声とストーリーでインバウンド動画にもっと<span className="text-accent-warm">効果</span>を
+            インバウンド・観光プロモーション動画に<br />ローカルの声でもっと<span className="text-accent-warm">効果</span>を
           </h1>
         </div>
       </section>

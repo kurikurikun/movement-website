@@ -96,12 +96,9 @@ export default function OurGearPage() {
                   </GearSection>
 
                   <GearSection title="Other cameras" titleJp="その他カメラ">
-                    <p>
-                      <strong className="text-neutral-900">Blackmagicdesign</strong> Pocket Cinema Camera 6K (BMPCC6K) + 4K (BMPCC4K),{" "}
-                      <strong className="text-neutral-900">Gopro</strong> 10,{" "}
-                      <strong className="text-neutral-900">Insta360</strong> One X,{" "}
-                      <strong className="text-neutral-900">Canon</strong> 5D Mark III
-                    </p>
+                    <p><strong className="text-neutral-900">Blackmagicdesign</strong> Cinema Camera 6K (BMCC6K)</p>
+                    <p><strong className="text-neutral-900">Blackmagicdesign</strong> Pocket Cinema Camera 4K (BMPCC4K)</p>
+                    <p><strong className="text-neutral-900">Insta360</strong> One X</p>
                   </GearSection>
 
                   <GearSection title="Drones" titleJp="ドローン">
@@ -149,8 +146,8 @@ export default function OurGearPage() {
                     <GearLine brand="Countryman" detail="B6 lav mic" />
                     <GearLine brand="Rode" detail="NTG 5 mic" />
                     <GearLine brand="Rode" detail="VideoMic NTG mic" />
-                    <GearLine brand="DJI" detail="dual-channel wireless mic" />
-                    <GearLine brand="Hollyland" detail="Lark M2 wireless mic" />
+                    <GearLine brand="Hollyland" detail="Lark Max 2 wireless mic set" />
+                    <GearLine brand="Hollyland" detail="Lark M2 wireless mic set" />
                     <GearLine brand="Sony" detail="UWP-D11 wireless lav mic set" />
                     <GearLine brand="Deity" detail="TC-1 Time Code Generator set" />
                     <GearLine brand="Deity" detail="Pr-2 32bit float lav mic" />

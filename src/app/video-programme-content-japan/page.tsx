@@ -30,6 +30,17 @@ export default function ProgrammeContentPage() {
         </div>
       </section>
 
+      {/* Page title */}
+      <section className="pt-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="border border-neutral-200 p-8 sm:p-12 mb-0">
+            <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 mb-2">
+              <span className="text-accent-warm">Catch Japan</span> : NHK World broadcast programme content
+            </h2>
+          </div>
+        </div>
+      </section>
+
       {/* Okutama - Tokyo Nature Drift */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
@@ -169,6 +180,19 @@ export default function ProgrammeContentPage() {
                   />
                 </div>
               </div>
+            </div>
+
+            {/* Oishii photos */}
+            <div className="grid grid-cols-3 gap-4 mt-8">
+              {["/images/oishii1.jpg", "/images/oishii2.jpg", "/images/oishii3.jpg"].map((img, j) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={j}
+                  src={img}
+                  alt={`Channel Oishii ${j + 1}`}
+                  className="w-full aspect-video object-cover"
+                />
+              ))}
             </div>
           </FadeInSection>
         </div>

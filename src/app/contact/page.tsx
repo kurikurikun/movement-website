@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact | Video Production Enquiries Japan",
   description:
     "Get in touch with move-ment — Tokyo's bilingual video production company. Enquire about corporate video, drone, VR/360 tours, documentary and more. お気軽にご相談ください。",
   alternates: { canonical: "https://www.move-ment.co/contact" },

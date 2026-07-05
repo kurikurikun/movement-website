@@ -3,9 +3,9 @@ import FadeInSection from "@/components/FadeInSection";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "大学プロモーション映像制作",
+  title: "大学プロモーション・広報映像制作｜move-ment",
   description:
-    "大学・専門学校の魅力を映像で伝える。Bilingual university and educational institution promotion video production in Japan for domestic and international student recruitment.",
+    "大学の魅力を映像で伝える広報・プロモーション動画制作。在学生インタビュー、キャンパスドキュメンタリー、学部紹介映像など。志願者増加・大学ブランディングに。",
   alternates: { canonical: "https://www.move-ment.co/university-promotion-video-japan" },
   openGraph: {
     title: "University Promotion Video Japan | move-ment",
@@ -69,7 +69,7 @@ export default function UniversityPromoPage() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative px-8 max-w-6xl mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight font-jp">
-            学生を動かす、大学の<span className="text-accent-warm">「顔」</span>を映像で。
+            大学プロモーション映像・広報動画で<br />志願者を動かす<span className="text-accent-warm">。</span>
           </h1>
           <p className="text-white/80 text-lg sm:text-xl font-jp mt-6">
             「魅せる大学」が、未来の志願者を引き寄せる。

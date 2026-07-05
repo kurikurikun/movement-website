@@ -3,9 +3,9 @@ import FadeInSection from "@/components/FadeInSection";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "地方プロモーション映像制作",
+  title: "移住促進・地方プロモーション映像制作｜move-ment",
   description:
-    "地方移住促進・観光・地域ブランド発信のための動画制作。Regional migration promotion and tourism video production in Japan. Testimonial video services for local governments.",
+    "移住促進・地方創生・地域ブランディングのための映像制作。自治体・地域おこし協力隊・観光協会向けに、移住者インタビューや地域ドキュメンタリーを制作します。",
   alternates: { canonical: "https://www.move-ment.co/regional-migration" },
   openGraph: {
     title: "Regional Promotion Video Production Japan | move-ment",
@@ -62,7 +62,7 @@ export default function RegionalMigrationPage() {
             Regional Promotion
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mt-3 text-neutral-900 leading-none font-jp">
-            地方プロモーション<br />
+            移住促進・地方プロモーション<br />
             映像制作<span className="text-accent-warm">.</span>
           </h1>
           <p className="text-neutral-600 text-lg mt-4 max-w-2xl">

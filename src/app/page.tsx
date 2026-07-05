@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     description:
       "Tokyo-based bilingual video production. Corporate, drone, VR/360, documentary, inbound tourism. 映像制作会社。",
     url: "https://www.move-ment.co",
-    images: [{ url: "/images/japan_drone_photos_dji_123.jpg", width: 1200, height: 630, alt: "move-ment — Bilingual Video Production Japan" }],
   },
 };
 

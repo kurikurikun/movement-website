@@ -47,14 +47,6 @@ export const metadata: Metadata = {
     title: "move-ment | Bilingual Video Production Company Japan",
     description:
       "Tokyo-based bilingual video production company. Corporate video, drone, VR/360, documentary, inbound tourism. 日本を拠点とするバイリンガル映像制作会社。",
-    images: [
-      {
-        url: "/images/japan_drone_photos_dji_123.jpg",
-        width: 1200,
-        height: 630,
-        alt: "move-ment — Bilingual Video Production Japan",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",

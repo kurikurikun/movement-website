@@ -39,6 +39,7 @@ const navMenus: NavMenu[] = [
       { label: "Our Company", href: "/about" },
       { label: "Our People", href: "/our-people" },
       { label: "Our Gear", href: "/kizai-equipment-video-japan" },
+      { label: "Contact Us", href: "/contact" },
       { label: "Privacy Policy", href: "/privacy-policy" },
     ],
   },

@@ -110,6 +110,17 @@ export default function HeroSlideshow() {
         ))}
       </div>
 
+      {/* H1 — cinematic lower-third title card */}
+      <div className="absolute bottom-24 left-0 right-0 px-8 lg:px-20">
+        <div className="flex items-center gap-5 max-w-5xl">
+          <div className="h-px w-12 bg-accent-warm/60 flex-shrink-0" />
+          <h1 className="font-mono text-[9px] sm:text-[11px] tracking-[0.35em] text-neutral-400 uppercase whitespace-nowrap">
+            Bilingual Video Production Company&nbsp;&nbsp;·&nbsp;&nbsp;Tokyo, Japan
+          </h1>
+          <div className="h-px flex-1 bg-gradient-to-r from-accent-warm/30 to-transparent" />
+        </div>
+      </div>
+
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
         <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-500 uppercase">scroll</span>
