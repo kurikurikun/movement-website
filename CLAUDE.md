@@ -21,3 +21,9 @@ npm run build    # Production build
 - `src/components/` — Navigation, Footer, HeroSlideshow, FadeInSection
 - Dark cinematic aesthetic, accent color `#c4a882`, bilingual JP+EN content
 - Placeholder images via picsum.photos
+
+## Deployment
+
+- **`git push` to `origin` (kurikurikun/movement-website) is the ONLY deploy path** — Vercel auto-builds production from every push to main (integration confirmed working 2026-07-05).
+- Never use `vercel` CLI (uninstalled machine-wide 2026-07-05) — dirty-tree CLI deploys caused live sites to silently diverge from git.
+- All assets referenced by pages must be committed to git.
