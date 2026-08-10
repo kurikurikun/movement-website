@@ -26,6 +26,7 @@ const navMenus: NavMenu[] = [
   {
     label: "Our Work",
     items: [
+      { label: "Japan Visions — Artists", href: "/japan-visions" },
       { label: "Programme Content", href: "/video-programme-content-japan" },
       { label: "Corporate Video", href: "https://www.filminginjapan.com/" },
       { label: "Drone Video & Photo", href: "/japan-drone-video-photo" },
