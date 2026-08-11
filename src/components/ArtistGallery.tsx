@@ -87,13 +87,14 @@ export default function ArtistGallery({ artists }: { artists: Artist[] }) {
                         aria-label={`${artist.name} — photo ${i + 2}`}
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        {/* object-top: portrait frames get cropped top-and-bottom by the 4:3
-                            box, so anchor to the top of the frame to keep the face in shot. */}
+                        {/* Portrait frames get cropped top-and-bottom by the 4:3 box. Centring
+                            cut heads off; anchoring to the very top left faces sitting too low.
+                            30% lands the crop on where faces actually fall in these shots. */}
                         <img
                           src={src}
                           alt={`${artist.name} ${artist.nameJa} — portrait by Chris Moore`}
                           loading="lazy"
-                          className="w-full aspect-[4/3] object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
+                          className="w-full aspect-[4/3] object-cover object-[center_30%] group-hover:scale-[1.03] transition-transform duration-700"
                         />
                       </button>
                     ))}
