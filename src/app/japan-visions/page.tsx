@@ -33,7 +33,7 @@ export default function JapanVisionsPage() {
       <section className="relative h-[62vh] flex items-end pb-16">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/artists/sorayama-hajime-1.jpg"
+          src="/images/artists/hero.jpg"
           alt=""
           className="absolute inset-0 w-full h-full object-cover grayscale"
         />

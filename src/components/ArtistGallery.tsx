@@ -8,6 +8,12 @@ interface ActiveShot {
   photo: number;
 }
 
+/**
+ * Cards load a ~1100px file; the lightbox swaps in the ~2400px sibling.
+ * The large file is only fetched when the lightbox actually opens.
+ */
+const largeSrc = (src: string) => src.replace(/\.jpg$/, "-lg.jpg");
+
 export default function ArtistGallery({ artists }: { artists: Artist[] }) {
   const [active, setActive] = useState<ActiveShot | null>(null);
 
@@ -164,7 +170,7 @@ export default function ArtistGallery({ artists }: { artists: Artist[] }) {
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={activeArtist.photos[active.photo]}
+            src={largeSrc(activeArtist.photos[active.photo])}
             alt={`${activeArtist.name} ${activeArtist.nameJa}`}
             className="max-h-[82vh] max-w-[90vw] object-contain"
             onClick={(e) => e.stopPropagation()}
