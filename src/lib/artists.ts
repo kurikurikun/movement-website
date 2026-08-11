@@ -2,6 +2,8 @@ export interface Artist {
   slug: string;
   name: string;
   nameJa: string;
+  /** Surname used for ordering — differs from `name` for Western-order and mononym entries. */
+  sortName: string;
   mediumEn: string;
   mediumJa: string;
   bioEn: string;
@@ -18,10 +20,11 @@ export interface Artist {
 const photos = (slug: string, count = 1) =>
   Array.from({ length: count }, (_, i) => `/images/artists/${slug}-${i + 1}.jpg`);
 
-export const artists: Artist[] = [
+const roster: Artist[] = [
   {
     slug: "aida-makoto",
     name: "Aida Makoto",
+    sortName: "Aida",
     nameJa: "会田誠",
     mediumEn: "Painting, manga, sculpture, performance, installation",
     mediumJa: "絵画、漫画、立体、パフォーマンス、インスタレーション",
@@ -35,6 +38,7 @@ export const artists: Artist[] = [
   {
     slug: "shichinohe-masaru",
     name: "Shichinohe Masaru",
+    sortName: "Shichinohe",
     nameJa: "七戸優",
     mediumEn: "Painting (acrylic on wood panel)",
     mediumJa: "絵画（木製パネル・アクリル）",
@@ -48,6 +52,7 @@ export const artists: Artist[] = [
   {
     slug: "yanobe-kenji",
     name: "Yanobe Kenji",
+    sortName: "Yanobe",
     nameJa: "ヤノベケンジ",
     mediumEn: "Sculpture, installation",
     mediumJa: "彫刻、インスタレーション",
@@ -62,6 +67,7 @@ export const artists: Artist[] = [
   {
     slug: "ikeya-tomohide",
     name: "Ikeya Tomohide",
+    sortName: "Ikeya",
     nameJa: "池谷友秀",
     mediumEn: "Photography, fine art",
     mediumJa: "写真、ファインアート",
@@ -76,6 +82,7 @@ export const artists: Artist[] = [
   {
     slug: "ichihara-etsuko",
     name: "Ichihara Etsuko",
+    sortName: "Ichihara",
     nameJa: "市原えつこ",
     mediumEn: "Media art, digital, installation",
     mediumJa: "メディアアート、デジタル、インスタレーション",
@@ -90,6 +97,7 @@ export const artists: Artist[] = [
   {
     slug: "odani-motohiko",
     name: "Odani Motohiko",
+    sortName: "Odani",
     nameJa: "小谷元彦",
     mediumEn: "Sculpture, installation, video",
     mediumJa: "彫刻、インスタレーション、映像",
@@ -103,6 +111,7 @@ export const artists: Artist[] = [
   {
     slug: "miwa-yanagi",
     name: "Miwa Yanagi",
+    sortName: "Yanagi",
     nameJa: "やなぎみわ",
     mediumEn: "Photography, theatre, performance",
     mediumJa: "写真、演劇、パフォーマンス",
@@ -117,6 +126,7 @@ export const artists: Artist[] = [
   {
     slug: "sorayama-hajime",
     name: "Sorayama Hajime",
+    sortName: "Sorayama",
     nameJa: "空山基",
     mediumEn: "Illustration, painting",
     mediumJa: "イラストレーション、絵画",
@@ -131,6 +141,7 @@ export const artists: Artist[] = [
   {
     slug: "kumazawa-mikiko",
     name: "Kumazawa Mikiko",
+    sortName: "Kumazawa",
     nameJa: "熊澤未来子",
     mediumEn: "Drawing (pencil), large-scale works",
     mediumJa: "ドローイング（鉛筆）、大型作品",
@@ -144,6 +155,7 @@ export const artists: Artist[] = [
   {
     slug: "saeborg",
     name: "Saeborg",
+    sortName: "Saeborg",
     nameJa: "サエボーグ",
     mediumEn: "Performance art, latex sculpture",
     mediumJa: "パフォーマンスアート、ラテックス彫刻",
@@ -158,6 +170,7 @@ export const artists: Artist[] = [
   {
     slug: "nawa-kohei",
     name: "Nawa Kohei",
+    sortName: "Nawa",
     nameJa: "名和晃平",
     mediumEn: "Sculpture, installation, direction",
     mediumJa: "彫刻、インスタレーション、ディレクション",
@@ -172,6 +185,7 @@ export const artists: Artist[] = [
   {
     slug: "matsui-fuyuko",
     name: "Matsui Fuyuko",
+    sortName: "Matsui",
     nameJa: "松井冬子",
     mediumEn: "Nihonga (Japanese painting)",
     mediumJa: "日本画",
@@ -186,6 +200,7 @@ export const artists: Artist[] = [
   {
     slug: "tsukuda-hiroki",
     name: "Tsukuda Hiroki",
+    sortName: "Tsukuda",
     nameJa: "佃弘樹",
     mediumEn: "Drawing, digital collage",
     mediumJa: "ドローイング、デジタルコラージュ",
@@ -200,6 +215,7 @@ export const artists: Artist[] = [
   {
     slug: "koike-kensuke",
     name: "Koike Kensuke",
+    sortName: "Koike",
     nameJa: "小池健輔",
     mediumEn: "Conceptual art, photography manipulation",
     mediumJa: "コンセプチュアルアート、写真の再構成",
@@ -214,6 +230,7 @@ export const artists: Artist[] = [
   {
     slug: "honjo-naoki",
     name: "Honjo Naoki",
+    sortName: "Honjo",
     nameJa: "本城直季",
     mediumEn: "Photography",
     mediumJa: "写真",
@@ -228,6 +245,7 @@ export const artists: Artist[] = [
   {
     slug: "midori",
     name: "M!DOR!",
+    sortName: "Midori",
     nameJa: "ミドリ",
     mediumEn: "Collage, graphic design, art direction",
     mediumJa: "コラージュ、グラフィックデザイン、アートディレクション",
@@ -242,6 +260,7 @@ export const artists: Artist[] = [
   {
     slug: "kago-shintaro",
     name: "Kago Shintaro",
+    sortName: "Kago",
     nameJa: "駕籠真太郎",
     mediumEn: "Manga, illustration",
     mediumJa: "漫画、イラストレーション",
@@ -256,6 +275,7 @@ export const artists: Artist[] = [
   {
     slug: "matsuda-kouichi",
     name: "Matsuda Kouichi",
+    sortName: "Matsuda",
     nameJa: "松田光市",
     mediumEn: "3D / digital art",
     mediumJa: "3D／デジタルアート",
@@ -269,6 +289,7 @@ export const artists: Artist[] = [
   {
     slug: "hamaguchi-ken",
     name: "Hamaguchi Ken",
+    sortName: "Hamaguchi",
     nameJa: "濱口健",
     mediumEn: "Painting",
     mediumJa: "絵画",
@@ -283,6 +304,7 @@ export const artists: Artist[] = [
   {
     slug: "sekitani-norihiro",
     name: "Sekitani Norihiro",
+    sortName: "Sekitani",
     nameJa: "関谷則仁",
     mediumEn: "Mixed media, illustration",
     mediumJa: "ミクストメディア、イラストレーション",
@@ -296,6 +318,7 @@ export const artists: Artist[] = [
   {
     slug: "morimura-yasumasa",
     name: "Morimura Yasumasa",
+    sortName: "Morimura",
     nameJa: "森村泰昌",
     mediumEn: "Photography, performance, self-portraiture",
     mediumJa: "写真、パフォーマンス、セルフポートレート",
@@ -310,6 +333,7 @@ export const artists: Artist[] = [
   {
     slug: "hajime-kinoko",
     name: "Hajime Kinoko",
+    sortName: "Kinoko",
     nameJa: "一鬼のこ",
     mediumEn: "Rope art (shibari / kinbaku), performance, photography",
     mediumJa: "縄アート（緊縛・縛り）、パフォーマンス、写真",
@@ -322,3 +346,8 @@ export const artists: Artist[] = [
     photos: photos("hajime-kinoko", 3),
   },
 ];
+
+/** Displayed alphabetically by surname. */
+export const artists: Artist[] = [...roster].sort((a, b) =>
+  a.sortName.localeCompare(b.sortName)
+);
