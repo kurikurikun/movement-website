@@ -160,20 +160,20 @@ export default function PeripheralSpeedPage() {
           <FadeInSection>
             <div className="border-t border-neutral-200 mt-10 pt-14 text-center space-y-4">
               <h3 className="text-xl font-black text-neutral-900">
-                useful? <span className="text-accent-warm">buy us a coffee</span>
+                useful? <span className="text-accent-warm">buy us a matcha latte</span>
               </h3>
               <p className="text-neutral-600 max-w-xl mx-auto">
                 Peripheral Speed is free, forever. If it saved your offload day, a ¥500
-                coffee keeps it cared for.
+                matcha latte keeps it cared for.
               </p>
               <p className="text-neutral-500 text-sm font-jp max-w-xl mx-auto">
-                このアプリはずっと無料です。役に立ったら、コーヒー1杯(¥500ほど)の応援をいただけると嬉しいです。
+                このアプリはずっと無料です。役に立ったら、抹茶ラテ1杯(¥500ほど)の応援をいただけると嬉しいです。
               </p>
               <a
                 href={KOFI_URL}
                 className="inline-block border-2 border-accent-warm text-neutral-900 font-bold px-8 py-3 rounded-full hover:bg-accent-warm hover:text-white transition-colors"
               >
-                ☕ Support on Ko-fi
+                🍵 Support on Ko-fi
               </a>
             </div>
           </FadeInSection>
