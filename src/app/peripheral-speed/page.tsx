@@ -38,6 +38,14 @@ const features = [
     en: "Measure real speed with one click, eject safely, and see \"500 GB ≈ 8 min\" before a big offload.",
     jp: "ワンクリック実測スピードテスト、安全な取り外し、「500GB ≈ 8分」の目安時間。",
   },
+  {
+    en: "Watch copies live: open the menu mid-transfer and see \"Copying right now ≈ 0.8 GB/s\" — no more trusting Finder's progress bar.",
+    jp: "コピー中の実速度をリアルタイム表示。「今 ≈ 0.8 GB/s で転送中」— 進捗バーを信じる必要なし。",
+  },
+  {
+    en: "Capacity at a glance — \"1 TB drive · 487 GB free\", with a warning when a drive is nearly full. Fast enough AND big enough, checked together.",
+    jp: "空き容量もひと目で。「1TBドライブ・残り487GB」、残量わずかなら警告。速度と容量を同時にチェック。",
+  },
 ];
 
 export default function PeripheralSpeedPage() {
@@ -132,11 +140,12 @@ export default function PeripheralSpeedPage() {
               </a>
               <p className="text-neutral-500 text-sm">
                 Apple Silicon (M1 and later) · notarized by Apple — unzip, drag to
-                Applications, open. That&apos;s it.
+                Applications, open. That&apos;s it. Future updates install themselves
+                with one click.
               </p>
               <p className="text-neutral-500 text-sm font-jp">
                 Apple Silicon Mac 専用(M1以降)・Apple公証済み。解凍して
-                アプリケーションフォルダに入れて開くだけ。
+                アプリケーションフォルダに入れて開くだけ。以後のアップデートはワンクリックで自動インストール。
               </p>
               <p className="text-neutral-400 text-sm">
                 Free &amp; open source ·{" "}
