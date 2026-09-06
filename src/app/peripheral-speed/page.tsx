@@ -117,7 +117,7 @@ export default function PeripheralSpeedPage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/peripheralspeed_panel.png"
-                alt="Peripheral Speed panel showing ports and speeds"
+                alt="Peripheral Speed panel during a live copy — ports, speeds, capacity"
                 className="max-w-sm w-full rounded-xl shadow-2xl"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
