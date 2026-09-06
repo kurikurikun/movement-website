@@ -42,6 +42,7 @@ export default function Footer() {
                 { label: "Drone Video & Photo", href: "/japan-drone-video-photo" },
                 { label: "VR / 360° Tours", href: "/vr-360-tours-japan" },
                 { label: "Blog", href: "/blog" },
+                { label: "Peripheral Speed (Free App)", href: "/peripheral-speed" },
                 { label: "About Us", href: "/about" },
                 { label: "Contact", href: "/contact" },
               ].map((link) => (

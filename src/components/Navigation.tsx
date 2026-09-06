@@ -32,6 +32,7 @@ const navMenus: NavMenu[] = [
       { label: "Drone Video & Photo", href: "/japan-drone-video-photo" },
       { label: "VR / 360° Tours", href: "/vr-360-tours-japan" },
       { label: "Blog", href: "/blog" },
+      { label: "Peripheral Speed — Free Mac App", href: "/peripheral-speed" },
     ],
   },
   {
