@@ -103,13 +103,19 @@ export default function PeripheralSpeedPage() {
             </div>
           </FadeInSection>
 
-          {/* Screenshot */}
+          {/* Screenshots */}
           <FadeInSection>
-            <div className="flex justify-center mb-16">
+            <div className="flex flex-col sm:flex-row justify-center items-start gap-8 mb-16">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/peripheralspeed_panel.png"
+                alt="Peripheral Speed panel showing ports and speeds"
+                className="max-w-sm w-full rounded-xl shadow-2xl"
+              />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/peripheralspeed_about.png"
-                alt="Peripheral Speed app panel"
+                alt="Peripheral Speed about panel"
                 className="max-w-sm w-full rounded-xl shadow-2xl"
               />
             </div>
