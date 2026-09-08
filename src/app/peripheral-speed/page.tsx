@@ -113,13 +113,27 @@ export default function PeripheralSpeedPage() {
 
           {/* Screenshots */}
           <FadeInSection>
-            <div className="flex flex-col sm:flex-row justify-center items-start gap-8 mb-16">
+            <p className="text-center text-neutral-700 text-lg font-semibold mb-2">
+              It even tells you which port is better.
+            </p>
+            <p className="text-center text-neutral-500 font-jp mb-8">
+              「そのドライブ、Macのポートに挿し替えた方が速いですよ」まで教えてくれます。
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center items-start gap-8 mb-8">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/peripheralspeed_coaching.png"
+                alt="Peripheral Speed suggesting a faster port for a drive on the display"
+                className="max-w-sm w-full rounded-xl shadow-2xl"
+              />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/peripheralspeed_panel.png"
-                alt="Peripheral Speed panel during a live copy — ports, speeds, capacity"
+                alt="Peripheral Speed showing ports, live speed and capacity"
                 className="max-w-sm w-full rounded-xl shadow-2xl"
               />
+            </div>
+            <div className="flex justify-center mb-16">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/peripheralspeed_about.png"
