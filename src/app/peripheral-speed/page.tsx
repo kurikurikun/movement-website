@@ -133,7 +133,19 @@ export default function PeripheralSpeedPage() {
                 className="max-w-sm w-full rounded-xl shadow-2xl"
               />
             </div>
-            <div className="flex justify-center mb-16">
+            <p className="text-center text-neutral-700 text-lg font-semibold mb-2 mt-4">
+              Don&apos;t trust the label — measure it.
+            </p>
+            <p className="text-center text-neutral-500 font-jp mb-8">
+              カタログ値ではなく、実測。ボタン一つで本当の書き込み・読み込み速度を計測。
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center items-start gap-8 mb-16">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/peripheralspeed_measured.png"
+                alt="Peripheral Speed showing a measured write/read speed test"
+                className="max-w-sm w-full rounded-xl shadow-2xl"
+              />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/peripheralspeed_about.png"
