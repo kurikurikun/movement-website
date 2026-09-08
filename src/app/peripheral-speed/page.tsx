@@ -114,7 +114,7 @@ export default function PeripheralSpeedPage() {
           {/* Screenshots */}
           <FadeInSection>
             <p className="text-center text-neutral-700 text-lg font-semibold mb-2">
-              It even tells you which port is better.
+              It even tells you which port is fastest.
             </p>
             <p className="text-center text-neutral-500 font-jp mb-8">
               「そのドライブ、Macのポートに挿し替えた方が速いですよ」まで教えてくれます。
@@ -122,14 +122,14 @@ export default function PeripheralSpeedPage() {
             <div className="flex flex-col sm:flex-row justify-center items-start gap-8 mb-8">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/peripheralspeed_coaching.png"
-                alt="Peripheral Speed suggesting a faster port for a drive on the display"
+                src="/images/which-mac-port-is-fastest-for-your-drive.png"
+                alt="Peripheral Speed advising which Mac USB-C port is fastest for an external drive"
                 className="max-w-sm w-full rounded-xl shadow-2xl"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/peripheralspeed_panel.png"
-                alt="Peripheral Speed showing ports, live speed and capacity"
+                src="/images/check-mac-usb-c-thunderbolt-port-speed.png"
+                alt="Check Mac USB-C and Thunderbolt port speed, capacity and copy time"
                 className="max-w-sm w-full rounded-xl shadow-2xl"
               />
             </div>
@@ -142,14 +142,14 @@ export default function PeripheralSpeedPage() {
             <div className="flex flex-col sm:flex-row justify-center items-start gap-8 mb-16">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/peripheralspeed_measured.png"
-                alt="Peripheral Speed showing a measured write/read speed test"
+                src="/images/measure-external-drive-speed-on-mac.png"
+                alt="Measure real external drive read and write speed on a Mac"
                 className="max-w-sm w-full rounded-xl shadow-2xl"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/peripheralspeed_about.png"
-                alt="Peripheral Speed about panel"
+                src="/images/peripheral-speed-mac-menu-bar-app.png"
+                alt="Peripheral Speed free Mac menu bar app for checking port speed"
                 className="max-w-sm w-full rounded-xl shadow-2xl"
               />
             </div>
