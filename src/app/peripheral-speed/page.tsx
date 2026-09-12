@@ -46,6 +46,10 @@ const features = [
     en: "Capacity at a glance — \"1 TB drive · 487 GB free\", with a warning when a drive is nearly full. Fast enough AND big enough, checked together.",
     jp: "空き容量もひと目で。「1TBドライブ・残り487GB」、残量わずかなら警告。速度と容量を同時にチェック。",
   },
+  {
+    en: "Offload planner — pick a size and a source → destination (drive, card, or your Mac), see the time, and copy a checksum-verified command. The app plans it; it never touches your files.",
+    jp: "取り込みプランナー — 容量とコピー元→先(ドライブ・カード・Mac)を選ぶと所要時間を表示、検証付きコピーコマンドをワンクリック。ファイルには触れず、あなたが実行。",
+  },
 ];
 
 export default function PeripheralSpeedPage() {
@@ -150,6 +154,20 @@ export default function PeripheralSpeedPage() {
               <img
                 src="/images/peripheral-speed-mac-menu-bar-app.png"
                 alt="Peripheral Speed free Mac menu bar app for checking port speed"
+                className="max-w-sm w-full rounded-xl shadow-2xl"
+              />
+            </div>
+            <p className="text-center text-neutral-700 text-lg font-semibold mb-2 mt-4">
+              Plan the offload — how long, and where.
+            </p>
+            <p className="text-center text-neutral-500 font-jp mb-8">
+              取り込み前に、どこへ・何分かかるかを計算。ワンクリックで検証付きコピーコマンドも。
+            </p>
+            <div className="flex justify-center mb-16">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/mac-offload-time-calculator.png"
+                alt="Mac offload time calculator — pick a size, choose source and destination, get a checksum-verified copy command"
                 className="max-w-sm w-full rounded-xl shadow-2xl"
               />
             </div>
