@@ -47,6 +47,10 @@ const features = [
     jp: "空き容量もひと目で。「1TBドライブ・残り487GB」、残量わずかなら警告。速度と容量を同時にチェック。",
   },
   {
+    en: "A drive in a Thunderbolt enclosure shows up as your drive — not as \"Intel Ash Creek\". Speed, capacity, eject and the speed test all work, against Thunderbolt's real ceiling (\u2248 2.8 GB/s on TB3), not the 40 Gb/s printed on the box.",
+    jp: "Thunderboltケースに入れたドライブも、チップ名(Intel Ash Creekなど)ではなくドライブとして表示。速度・容量・取り外し・実測テストに対応。上限は箱の「40Gbps」ではなく実効の約2.8GB/s。",
+  },
+  {
     en: "Offload planner — pick a size and a source → destination (drive, card, or your Mac), see the time, and copy a checksum-verified command. The app plans it; it never touches your files.",
     jp: "取り込みプランナー — 容量とコピー元→先(ドライブ・カード・Mac)を選ぶと所要時間を表示、検証付きコピーコマンドをワンクリック。ファイルには触れず、あなたが実行。",
   },
