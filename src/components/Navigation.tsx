@@ -33,6 +33,7 @@ const navMenus: NavMenu[] = [
       { label: "VR / 360° Tours", href: "/vr-360-tours-japan" },
       { label: "Blog", href: "/blog" },
       { label: "Peripheral Speed — Free Mac App", href: "/peripheral-speed" },
+      { label: "Day Offload — Free Mac App", href: "/day-offload" },
     ],
   },
   {

@@ -43,6 +43,7 @@ export default function Footer() {
                 { label: "VR / 360° Tours", href: "/vr-360-tours-japan" },
                 { label: "Blog", href: "/blog" },
                 { label: "Peripheral Speed (Free App)", href: "/peripheral-speed" },
+                { label: "Day Offload (Free App)", href: "/day-offload" },
                 { label: "About Us", href: "/about" },
                 { label: "Contact", href: "/contact" },
               ].map((link) => (
