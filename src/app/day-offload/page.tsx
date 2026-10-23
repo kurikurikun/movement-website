@@ -30,8 +30,8 @@ const features = [
     jp: "深夜まで続く撮影も同じ日として扱います。午前4時より前の素材は前日扱い(時刻は変更可)。",
   },
   {
-    en: "Set your shoot dates once. Plug in a card and the app opens by itself, ticks those days and asks where to back up. Several cards queue up one after another.",
-    jp: "撮影期間を一度設定すれば、カードを挿すだけでアプリが起動し、該当日を選んでバックアップ先を確認。複数のカードも順番に処理。",
+    en: "Plug in a card and the app opens by itself with today's footage ticked — or the card's latest day the morning after, or a date range you set. It shows the exact folders it will write; one press to offload. Several cards queue up one after another.",
+    jp: "カードを挿すだけでアプリが起動し、今日の素材を自動で選択(翌朝なら最新の撮影日、期間指定も可)。書き込み先のフォルダを表示し、ボタン一つで取り込み開始。複数のカードも順番に処理。",
   },
   {
     en: "One read of the card, written to every drive at once — then every copy is read back from the drive and checksum-checked against the card.",
@@ -115,13 +115,13 @@ export default function DayOffloadPage() {
               Plug in a card. It already knows which days you want.
             </p>
             <p className="text-center text-neutral-500 font-jp mb-8">
-              カードを挿すだけ。撮影期間の素材を選んで、バックアップ先を聞いてきます。
+              カードを挿すだけ。撮影日の素材を選んで、コピー先のフォルダまで表示。
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-start gap-8 mb-16">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/offload-camera-card-by-shoot-day-mac.png"
-                alt="Day Offload asking where to back up a camera card's shoot days"
+                alt="A camera card goes in: Day Offload shows its shoot days and the exact backup folders, ready to offload"
                 className="max-w-sm w-full rounded-xl shadow-2xl"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
