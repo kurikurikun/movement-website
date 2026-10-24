@@ -10,6 +10,8 @@ const nextConfig = {
         destination: "/video-programme-content-japan",
         permanent: true,
       },
+      { source: "/day-offload", destination: "/mac-apps#day-offload", permanent: true },
+      { source: "/peripheral-speed", destination: "/mac-apps#peripheral-speed", permanent: true },
     ];
   },
 };

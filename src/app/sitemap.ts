@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/inbound-tourism`, lastModified: new Date("2026-02-01"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/regional-migration`, lastModified: new Date("2026-02-01"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/university-promotion-video-japan`, lastModified: new Date("2026-02-01"), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/day-offload`, lastModified: new Date("2026-10-21"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/mac-apps`, lastModified: new Date("2026-10-24"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog`, lastModified: new Date("2026-03-28"), changeFrequency: "weekly", priority: 0.7 },
     { url: `${base}/contact`, lastModified: new Date("2025-12-01"), changeFrequency: "yearly", priority: 0.7 },
     { url: `${base}/privacy-policy`, lastModified: new Date("2025-06-01"), changeFrequency: "yearly", priority: 0.3 },
