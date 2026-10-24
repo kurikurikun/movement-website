@@ -107,8 +107,8 @@ const apps: App[] = [
     ],
     download: "https://github.com/kurikurikun/peripheral-speed/releases/latest/download/PeripheralSpeed.zip",
     github: "https://github.com/kurikurikun/peripheral-speed",
-    req: "Apple Silicon (M1 and later) · one-click updates",
-    reqJp: "Apple Silicon Mac専用(M1以降)・ワンクリック更新",
+    req: "macOS 13+ · Apple Silicon only",
+    reqJp: "macOS 13以降・Apple Silicon専用",
   },
 ];
 
@@ -164,10 +164,10 @@ export default function MacAppsPage() {
                   ))}
                 </div>
 
-                <div className="mt-auto pt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+                <div className="mt-auto pt-8 flex flex-wrap sm:flex-nowrap items-center lg:flex-col lg:items-start xl:flex-row xl:items-center gap-x-5 gap-y-3">
                   <a
                     href={a.download}
-                    className="inline-block bg-neutral-900 text-white font-bold px-7 py-3 rounded-full hover:bg-accent-warm transition-colors"
+                    className="shrink-0 inline-block bg-neutral-900 text-white font-bold px-7 py-3 rounded-full hover:bg-accent-warm transition-colors"
                   >
                     Download — Free ↓
                   </a>
