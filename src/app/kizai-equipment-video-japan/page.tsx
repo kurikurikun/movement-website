@@ -87,9 +87,7 @@ export default function OurGearPage() {
                     <GearLine brand="Canon" detail="C80" />
                     <GearLine brand="Canon" detail="R5C" />
                     <GearLine brand="Canon" detail="R5" />
-                    <GearLine brand="Apple" detail={
-                      <>iPhone 17 Pro Max&ensp;<span className="text-neutral-400 text-xs">(shot on the iPhone 14 Pro)</span></>
-                    } />
+                    <GearLine brand="Apple" detail="iPhone 17 Pro Max" />
                     <p className="mt-3 text-neutral-500 text-xs leading-relaxed">
                       Extensive experience using Sony FX3, FX6, FX9, Canon C300, Phantom Flex, Arri Alexa Mini, Arri Amira and others.
                     </p>
