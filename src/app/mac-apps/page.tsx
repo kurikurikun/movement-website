@@ -4,14 +4,14 @@ import FadeInSection from "@/components/FadeInSection";
 const KOFI_URL = "https://ko-fi.com/movementchris";
 
 export const metadata: Metadata = {
-  title: "Free Mac apps for shoots — Day Offload & Peripheral Speed",
+  title: "Free Mac apps — Day Offload, Peripheral Speed & CallNotes",
   description:
-    "Two free Mac apps for video shoots: Day Offload copies only the shoot days you choose from a camera card, verified; Peripheral Speed shows how fast your ports and drives really are. 撮影現場のための無料Macアプリ。",
+    "Free Mac apps from move-ment: Day Offload copies only the shoot days you choose from a camera card, verified; Peripheral Speed shows how fast your ports and drives really are; CallNotes records online calls and writes the notes. 撮影現場と仕事のための無料Macアプリ。",
   alternates: { canonical: "https://www.move-ment.co/mac-apps" },
   openGraph: {
-    title: "Free Mac apps for shoots — Day Offload & Peripheral Speed",
+    title: "Free Mac apps — Day Offload, Peripheral Speed & CallNotes",
     description:
-      "Offload only the days you shot, verified to every drive. See what your ports and drives really deliver. Free and open source.",
+      "Offload only the days you shot, verified to every drive. See what your ports and drives really deliver. Turn any online call into notes. Free and open source.",
     url: "https://www.move-ment.co/mac-apps",
     images: [{ url: "/images/dayoffload_icon.png", width: 512, height: 512, alt: "Day Offload app icon" }],
   },
@@ -110,6 +110,36 @@ const apps: App[] = [
     req: "macOS 13+ · Apple Silicon only",
     reqJp: "macOS 13以降・Apple Silicon専用",
   },
+  {
+    id: "callnotes",
+    name: "CallNotes",
+    icon: "/images/callnotes_icon.png",
+    tagline: "Every client call, written up for you.",
+    taglineJp: "オンライン会議を、そのまま議事録に。",
+    points: [
+      {
+        en: "Records any online call — Meet, Teams, Zoom — from the menu bar. No bot joins the call.",
+        jp: "Meet・Teams・Zoomなど、どの会議もメニューバーから録音。ボットは参加しません。",
+      },
+      {
+        en: "Transcribed on your Mac, in Japanese and English — even when a call switches between them. Audio never leaves the Mac.",
+        jp: "Mac上で文字起こし。日本語と英語が混ざる会議にも対応。音声はMacの外に出ません。",
+      },
+      {
+        en: "A Claude summary with decisions and next steps, using your own API key.",
+        jp: "決定事項と次のアクションをClaudeで要約(ご自身のAPIキーを使用)。",
+      },
+      {
+        en: "Crash-safe: a dropped recording loses two seconds at most. Let everyone know you're recording.",
+        jp: "落ちても失うのは最大2秒。録音することは参加者に伝えましょう。",
+      },
+    ],
+    shots: [],
+    download: "https://github.com/kurikurikun/callnotes/releases/latest/download/CallNotes.zip",
+    github: "https://github.com/kurikurikun/callnotes",
+    req: "macOS 15+ · Apple Silicon only",
+    reqJp: "macOS 15以降・Apple Silicon専用",
+  },
 ];
 
 export default function MacAppsPage() {
@@ -123,9 +153,9 @@ export default function MacAppsPage() {
             tools for shoot days<span className="text-accent-warm">.</span>
           </h1>
           <p className="text-neutral-600 text-lg mt-5 max-w-2xl">
-            Two small apps we built for our own shoots. Free, open source and notarized by Apple.
+            Small apps we built for our own shoots and client work. Free, open source and notarized by Apple.
           </p>
-          <p className="text-neutral-500 font-jp mt-1">撮影現場のために作った無料Macアプリ。オープンソース・Apple公証済み。</p>
+          <p className="text-neutral-500 font-jp mt-1">撮影現場と仕事のために作った無料Macアプリ。オープンソース・Apple公証済み。</p>
         </div>
       </section>
 
@@ -157,12 +187,14 @@ export default function MacAppsPage() {
                   ))}
                 </ul>
 
+                {a.shots.length > 0 && (
                 <div className="grid grid-cols-2 gap-4 mt-6 items-start">
                   {a.shots.map((s) => (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img key={s.src} src={s.src} alt={s.alt} className="w-full rounded-lg shadow-xl" />
                   ))}
                 </div>
+                )}
 
                 <div className="mt-auto pt-8 flex flex-wrap sm:flex-nowrap items-center lg:flex-col lg:items-start xl:flex-row xl:items-center gap-x-5 gap-y-3">
                   <a
