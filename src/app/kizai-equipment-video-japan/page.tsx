@@ -143,7 +143,10 @@ export default function OurGearPage() {
                     <GearLine brand="Zoom" detail="F6 32bit float audio field recorder" />
                     <GearLine brand="Countryman" detail="B6 lav mic" />
                     <GearLine brand="Rode" detail="NTG 5 mic" />
+                    <GearLine brand="Rode" detail="NTG 4 mic" />
+                    <GearLine brand="Rode" detail="NTG 1 mic" />
                     <GearLine brand="Rode" detail="VideoMic NTG mic" />
+                    <GearLine brand="Deity" detail="S-Mic shotgun mic" />
                     <GearLine brand="Hollyland" detail="Lark Max 2 wireless mic set" />
                     <GearLine brand="Hollyland" detail="Lark M2 wireless mic set" />
                     <GearLine brand="Sony" detail="UWP-D11 wireless lav mic set" />
