@@ -143,7 +143,7 @@ export default function OurGearPage() {
                     <GearLine brand="Zoom" detail="F6 32bit float audio field recorder" />
                     <GearLine brand="Countryman" detail="B6 lav mic" />
                     <GearLine brand="Rode" detail="NTG 5 mic" />
-                    <GearLine brand="Rode" detail="NTG 4 mic" />
+                    <GearLine brand="Rode" detail="NTG 4+ mic" />
                     <GearLine brand="Rode" detail="NTG 1 mic" />
                     <GearLine brand="Rode" detail="VideoMic NTG mic" />
                     <GearLine brand="Deity" detail="S-Mic shotgun mic" />
