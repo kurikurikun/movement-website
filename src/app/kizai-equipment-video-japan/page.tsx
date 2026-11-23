@@ -147,6 +147,7 @@ export default function OurGearPage() {
                     <GearLine brand="Rode" detail="NTG 1 mic" />
                     <GearLine brand="Rode" detail="VideoMic NTG mic" />
                     <GearLine brand="Deity" detail="S-Mic shotgun mic" />
+                    <GearLine brand="Canon" detail="DM-E1D stereo shotgun mic" />
                     <GearLine brand="Hollyland" detail="Lark Max 2 wireless mic set" />
                     <GearLine brand="Hollyland" detail="Lark M2 wireless mic set" />
                     <GearLine brand="Sony" detail="UWP-D11 wireless lav mic set" />
